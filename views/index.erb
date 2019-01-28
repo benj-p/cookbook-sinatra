@@ -1,0 +1,19 @@
+<h1 class="cookbook-title">Welcome to your cookbook</h1>
+<br/>
+<a class="btn btn-primary index-button" href="/new">Create a recipe</a>
+<a class="btn btn-primary index-button" href="/import">Import from Marmiton</a>
+<br/><br/><br/>
+<ul class="cookbook-recipe-title">
+  <% @recipes.each_with_index do |recipe, index| %>
+    <li class="cookbook-recipe-title">
+      <h3 class="cookbook-recipe-title"><%=recipe.name %></h3><br/><a href="/delete?index=<%=index%>"><i>delete recipe</i></a> |
+      <% if recipe.done.to_s == "false"%>
+      <a href="/done?index_done=<%=index%>">mark as done</a>
+      <% else %>
+      <i>you've already cooked this recipe!</i>
+      <% end %>
+      <br/><br/><%=recipe.description %>
+    </li>
+  <% end %>
+</ul>
+<br/>

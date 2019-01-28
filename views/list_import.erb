@@ -1,0 +1,16 @@
+<h1>Recipes from Marmiton</h1>
+<p>Click on the recipe to import</p>
+
+<ol>
+  <% @scraped_titles.each_with_index do |title, index| %>
+    <li>
+      <a href="/import_select?import=<%= index %>"><%= title %></a>
+    </li>
+  <% end %>
+
+<!--   <form method="POST" action="/list_import" />
+  <p>Which one would you like to import?<input name="index" type="number"></p>
+  <input type="submit">
+  </form> -->
+
+</ol>
